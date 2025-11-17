@@ -2,64 +2,64 @@
     {
         "id": "1",
         "title": "Puket",
-        "images": "../../public/images/tour-image-01.webp",
-        "mainIamge": "../../public/images/tour-image-01-1.avif",
+        "images": "/images/tour-image-01.webp",
+        "mainIamge": "/tour-image-01-1.avif",
         "price": "$ 40",
         "location": "Thailand"
     },
     {
         "id": "2",
         "title": "Kelingking",
-        "images": "../../public/images/tour-image-02.webp",
-        "mainIamge": "../../public/images/tour-image-02-1.jpg",
+        "images": "/images/tour-image-02.webp",
+        "mainIamge": "/images/tour-image-02-1.jpg",
         "price": "$ 20",
         "location": "Indonesia"
     },
     {
         "id": "3",
         "title": "mt.Bromo",
-        "images": "../../public/images/tour-image-03.webp",
-        "mainIamge": "../../public/images//tour-image-03-1.jpeg",
+        "images": "/images/tour-image-03.jpg",
+        "mainIamge": "/images/tour-image-03-1.jpeg",
         "price": "$ 35",
         "location": "Indonesia"
     },
     {
         "id": "4",
         "title": "Old Began",
-        "images": "../../public/images/tour-image-04.webp",
-        "mainIamge": "../../public/images/tour-image-04-1.jpg",
+        "images": "/images/tour-image-04.webp",
+        "mainIamge": "/images/tour-image-04-1.jpg",
         "price": "$ 18",
         "location": "Myanmar"
     },
     {
         "id": "5",
         "title": "Ubud",
-        "images": "../../public/images/tour-image-05.webp",
-        "mainIamge": "../../public/images/tour-image-05-1.jpg",
+        "images": "/images/tour-image-05.webp",
+        "mainIamge": "/images/tour-image-05-1.jpg",
         "price": "$ 18",
         "location": "Indonesia"
     },
     {
         "id": "6",
         "title": "Marina Bay",
-        "images": "../../public/images/tour-image-06.webp",
-        "mainIamge": "../../public/images/tour-image-06-1.jpg",
+        "images": "/images/tour-image-06.webp",
+        "mainIamge": "/images/tour-image-06-1.jpg",
         "price": "$ 24",
         "location": "Singapore"
     },
     {
         "id": "7",
         "title": "Mt.Fuji",
-        "images": "../../public/images/tour-image-07.webp",
-        "mainIamge": "../../public/images/tour-image-07-1.jpg",
+        "images": "/images/tour-image-07.webp",
+        "mainIamge": "/images/tour-image-07-1.jpg",
         "price": "$ 48",
         "location": "Japan"
     },
     {
         "id": "8",
         "title": "Padar Island",
-        "images": "../../public/images/tour-image-08.webp",
-        "mainIamge": "../../public/images/tour-image-08-1.jpeg",
+        "images": "/images/tour-image-08.webp",
+        "mainIamge": "/images/tour-image-08-1.jpeg",
         "price": "$ 26",
         "location": "Indonesia"
     }
