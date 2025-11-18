@@ -25,7 +25,7 @@ export default async function Page({ params }) {
             <Link href="/"> Home</Link>
           </li>
           <li className="text-sm relative">
-            <FontAwesomeIcon icon={faAngleRight} className="absolute left-6 top-0.5"/>
+            <FontAwesomeIcon icon={faAngleRight} className="absolute -left-6 top-0.5"/>
             <Link href="#"> Tour Details</Link>
           </li>
         </ul>
