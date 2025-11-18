@@ -132,4 +132,22 @@
 
 }
 
+/* Testimonials Swiper Styles */
+.testimonials-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 2rem;
+}
 
+.testimonials-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #fbbf24;
+  width: 32px;
+  border-radius: 6px;
+}
