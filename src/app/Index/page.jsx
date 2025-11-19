@@ -4,10 +4,10 @@
 
 import Link from "next/link";
 import toursData from "../../context/ToursData.json";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleUp, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 // import {ToursDetails } from "../ToursDetails/[id]/page.jsx";
 import About01 from "../../../public/images/about-01.webp";
 import About02 from "../../../public/images/about-02.webp";
@@ -22,9 +22,43 @@ import BlogPage01 from "../../assest/Blog-Page-01.webp";
 import BlogPage02 from "../../assest/Blog-Page-02.webp";
 import BlogPage03 from "../../assest/Blog-Page-03.webp";
 import user from "../../assest/user.png";
+import FAQItem from "./FAQ";
 
 export default function Index() {
   const [selectedTour, setSelectedTour] = useState(null);
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const faqData = [
+  {
+    question: "1. What should I prepare for a trip to Asia?",
+    answer: "When preparing for an Asia trip, ensure your passport is valid for at least 6 months, obtain necessary visas, get recommended vaccinations, purchase comprehensive travel insurance, and pack appropriate clothing for the climate. Don't forget essential items like adaptors for electrical outlets, copies of important documents, and local currency or international credit cards."
+  },
+  {
+    question: "2. What is the best time to visit Asia?",
+    answer: "The best time varies by region. Generally, November to February offers pleasant weather across most of Southeast Asia. For East Asia (Japan, Korea, China), spring (March-May) and autumn (September-November) are ideal. Avoid monsoon seasons which typically run from June to September in most tropical regions. Always research specific destinations as weather patterns can vary significantly."
+  },
+  {
+    question: "3. Do I need vaccinations before traveling to Asia?",
+    answer: "Yes, certain vaccinations are recommended depending on your destination. Common ones include Hepatitis A and B, Typhoid, Japanese Encephalitis, and routine vaccines like MMR and Tetanus. Consult your doctor or a travel clinic at least 6-8 weeks before departure, as some vaccines require multiple doses over time. Some countries may also require proof of Yellow Fever vaccination."
+  },
+  {
+    question: "4. How much money should I budget for a trip to Asia?",
+    answer: "Budget varies greatly by country and travel style. Southeast Asian countries (Thailand, Vietnam, Cambodia) can cost $30-50 per day for budget travelers, $80-150 for mid-range, and $200+ for luxury. Countries like Japan, Singapore, and South Korea are more expensive, ranging from $80-300+ per day. Include flights, accommodation, food, activities, visas, insurance, and shopping in your budget planning."
+  },
+  {
+    question: "5. Is it safe to travel alone in Asia?",
+    answer: "Asia is generally safe for solo travelers, especially in popular tourist destinations. Countries like Japan, Singapore, and South Korea have very low crime rates. Always practice common sense: avoid walking alone late at night, keep valuables secure, stay in reputable accommodations, share your itinerary with someone, and trust your instincts. Women should dress modestly in conservative areas and research local customs beforehand."
+  },
+  {
+    question: "6. What are the must-visit destinations in Asia?",
+    answer: "Top destinations include Tokyo and Kyoto in Japan for culture and technology, Bali for beaches and spirituality, Bangkok and Chiang Mai in Thailand for food and temples, Ha Long Bay in Vietnam for natural beauty, Angkor Wat in Cambodia for ancient ruins, Singapore for modern architecture, the Himalayas in Nepal for trekking, and the Maldives for luxury beach resorts. Each offers unique experiences from bustling cities to serene natural landscapes."
+  }
+];
 
   return (
     <>
@@ -604,79 +638,318 @@ export default function Index() {
       {/* ----------------------------------------------------------------------------------------------------- */}
       <div className="blog px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]">
         <div className="w-full pb-5 ">
-            <h1 className="unbounded-font text-4xl font-semibold pb-3"> Our Latest Blogs</h1>
-            <p className="text-[#193555]">Explore our latest blogs for fresh travel insights, helpful tips, and inspiring stories from around the world. Stay updated with new destinations, guides, and experiences curated just for you. </p>
-
+          <h1 className="unbounded-font text-4xl font-semibold pb-3">
+            {" "}
+            Our Latest Blogs
+          </h1>
+          <p className="text-[#193555]">
+            Explore our latest blogs for fresh travel insights, helpful tips,
+            and inspiring stories from around the world. Stay updated with new
+            destinations, guides, and experiences curated just for you.{" "}
+          </p>
         </div>
 
         <div className="blog-wrapper grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            <div className="blog-card group cursor-pointer">
-  <div className="overflow-hidden rounded-[20px] mb-4">
-    <Image 
-      src={BlogPage01} 
-      alt="blog01" 
-      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
-    />
-  </div>
-  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
-    Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches
-  </h2>
-  <p className="text-[#7a7a7a] text-sm leading-relaxed">
-    Escape to paradise and discover Asia's most breathtaking beaches. From the crystal-clear waters of Thailand's Phi Phi Islands to the pristine shores of Bali, experience ultimate relaxation surrounded by stunning natural beauty. Let the gentle waves and golden sunsets restore your mind, body, and soul in these tropical havens.
-  </p>
-  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
-    Read More 
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </a>
-</div>
+          <div className="blog-card group cursor-pointer">
+            <div className="overflow-hidden rounded-[20px] mb-4">
+              <Image
+                src={BlogPage01}
+                alt="blog01"
+                className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+              Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches
+            </h2>
+            <p className="text-[#7a7a7a] text-sm leading-relaxed">
+              Escape to paradise and discover Asia's most breathtaking beaches.
+              From the crystal-clear waters of Thailand's Phi Phi Islands to the
+              pristine shores of Bali, experience ultimate relaxation surrounded
+              by stunning natural beauty. Let the gentle waves and golden
+              sunsets restore your mind, body, and soul in these tropical
+              havens.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all"
+            >
+              Read More
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
 
-<div className="blog-card group cursor-pointer">
-  <div className="overflow-hidden rounded-[20px] mb-4">
-    <Image 
-      src={BlogPage02} 
-      alt="blog02" 
-      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
-    />
-  </div>
-  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
-    Asia's Thrilling Adventures: Hiking, Trekking And More
-  </h2>
-  <p className="text-[#7a7a7a] text-sm leading-relaxed">
-    Embark on exhilarating adventures across Asia's diverse landscapes. Trek through the majestic Himalayas, hike ancient trails in Nepal, or explore the lush jungles of Vietnam. Whether you're scaling mountain peaks or discovering hidden waterfalls, Asia offers endless opportunities for adventure seekers and nature enthusiasts alike.
-  </p>
-  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
-    Read More 
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </a>
-</div>
+          <div className="blog-card group cursor-pointer">
+            <div className="overflow-hidden rounded-[20px] mb-4">
+              <Image
+                src={BlogPage02}
+                alt="blog02"
+                className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+              Asia's Thrilling Adventures: Hiking, Trekking And More
+            </h2>
+            <p className="text-[#7a7a7a] text-sm leading-relaxed">
+              Embark on exhilarating adventures across Asia's diverse
+              landscapes. Trek through the majestic Himalayas, hike ancient
+              trails in Nepal, or explore the lush jungles of Vietnam. Whether
+              you're scaling mountain peaks or discovering hidden waterfalls,
+              Asia offers endless opportunities for adventure seekers and nature
+              enthusiasts alike.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all"
+            >
+              Read More
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
 
-<div className="blog-card group cursor-pointer">
-  <div className="overflow-hidden rounded-[20px] mb-4">
-    <Image 
-      src={BlogPage03} 
-      alt="blog03" 
-      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
-    />
-  </div>
-  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
-    Unforgettable Experiences: Asia's Must-Visit Destinations
-  </h2>
-  <p className="text-[#7a7a7a] text-sm leading-relaxed">
-    Journey through Asia's most iconic destinations and create memories that last a lifetime. From the ancient temples of Angkor Wat to the bustling streets of Tokyo, immerse yourself in rich cultures and traditions. Experience the perfect blend of history, cuisine, and modern marvels that make Asia an unforgettable travel destination.
-  </p>
-  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
-    Read More 
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-    </svg>
-  </a>
-</div>
+          <div className="blog-card group cursor-pointer">
+            <div className="overflow-hidden rounded-[20px] mb-4">
+              <Image
+                src={BlogPage03}
+                alt="blog03"
+                className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+              Unforgettable Experiences: Asia's Must-Visit Destinations
+            </h2>
+            <p className="text-[#7a7a7a] text-sm leading-relaxed">
+              Journey through Asia's most iconic destinations and create
+              memories that last a lifetime. From the ancient temples of Angkor
+              Wat to the bustling streets of Tokyo, immerse yourself in rich
+              cultures and traditions. Experience the perfect blend of history,
+              cuisine, and modern marvels that make Asia an unforgettable travel
+              destination.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all"
+            >
+              Read More
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
+      {/* Experience */}
+      {/* ---------------------------------------------------------------------------------------------------------- */}
+      <div className="experience px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[50px] bg-gradient-to-br from-[#0e0700] via-[#1a1410] to-[#0e0700] relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-[#193555] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-float-delayed"></div>
+        </div>
+
+        <div className="experience-content flex flex-col lg:flex-row justify-between gap-8 lg:gap-10 items-start w-full relative z-10">
+          {/* Left Content */}
+          <div className="xl:w-[50%] w-full">
+            <div className="inline-block mb-4 animate-slide-in-left">
+              {/* <span className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-semibold border border-white/20">
+          ✨ Premium Experience
+        </span> */}
+            </div>
+            <h2 className="text-white text-3xl md:text-4xl xl:text-5xl leading-tight unbounded-font mb-6 animate-slide-in-left animation-delay-100">
+              Enjoy Our Best Quality Tour & Experience
+            </h2>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-3 gap-4 mt-8 animate-slide-in-left animation-delay-200">
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                <h3 className="text-3xl font-bold text-white unbounded-font group-hover:scale-110 transition-transform">
+                  50+
+                </h3>
+                <p className="text-xs text-gray-400 mt-1">Destinations</p>
+              </div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                <h3 className="text-3xl font-bold text-white unbounded-font group-hover:scale-110 transition-transform">
+                  1.2K+
+                </h3>
+                <p className="text-xs text-gray-400 mt-1">Happy Clients</p>
+              </div>
+              <div className="text-center p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                <h3 className="text-3xl font-bold text-white unbounded-font group-hover:scale-110 transition-transform">
+                  15+
+                </h3>
+                <p className="text-xs text-gray-400 mt-1">Years Exp.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className="xl:w-[40%] w-full animate-slide-in-right">
+            <p className="text-gray-400 pb-6 text-sm md:text-base leading-relaxed">
+              Experience world-class tour services designed to create
+              unforgettable memories. Our expert guides, carefully curated
+              destinations, and premium accommodations ensure every moment of
+              your journey is exceptional. From breathtaking landscapes to
+              immersive cultural experiences, we deliver excellence at every
+              step.
+            </p>
+
+            {/* Feature List */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                  <svg
+                    className="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-sm">Professional Tour Guides</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                  <svg
+                    className="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-sm">Luxury Accommodations</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                  <svg
+                    className="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-sm">24/7 Customer Support</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                  <svg
+                    className="w-5 h-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-sm">Best Price Guarantee</span>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-4 rounded-full w-full md:w-auto transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 relative overflow-hidden">
+              <span className="relative z-10 unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
+                Learn More
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#193555] to-[#0f273d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            </button>
+
+            {/* Trust Badge */}
+            <div className="mt-6 flex items-center gap-3 text-gray-400 text-xs">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-[#0e0700] flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-[#0e0700] flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-[#0e0700] flex items-center justify-center">
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+              </div>
+              <span>Trusted by 1,200+ satisfied travelers</span>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-8 mt-10 mx-auto w-[100%] lg:w-[80%]">
+  {faqData.map((item, index) => (
+    <FAQItem
+      key={index}
+      item={item}
+      isOpen={openIndex === index}
+      toggle={() => toggle(index)}
+    />
+  ))}
+</div>
+
+      </div>
+
     </>
   );
 }
