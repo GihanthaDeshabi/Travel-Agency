@@ -49,7 +49,7 @@
 }
 .hero{
   height: 100vh;
-  background: url(/images/tour-image-08-1.jpeg);
+  background: url(/images/tour-image-03-1.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -151,40 +151,41 @@
   width: 32px;
   border-radius: 6px;
 }
-/* Magic UI Animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(-20px) translateX(10px);
+
+.contact-banner {
+  height: 700px;
+  background: url(../../public//images/Contact-banner-bg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.contact-banner:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000082;
+  opacity: 0.6;
+  z-index: -1;
+
+}
+@media (max-width:767px){
+  .contact-banner{
+    height: 500px;
   }
 }
+.contact-banner-content{
 
-@keyframes float-delayed {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(20px) translateX(-10px);
-  }
+
 }
-
-@keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes slide-in-right {
   0% {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;
@@ -192,32 +193,9 @@
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 8s ease-in-out infinite;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
-}
-
 .animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
+  animation: slide-in-right 0.4s ease-out;
 }
-
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-/* Backdrop blur support */
-.backdrop-blur-sm {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+.newsletter{
+  border-radius: 15;
 }

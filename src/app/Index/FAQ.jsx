@@ -111,10 +111,10 @@ export default function FAQ() {
         </div>
 
         <div className="text-center mt-12 pt-8 border-t border-white/10">
-          <p className="text-gray-400 mb-4">Still have questions?</p>
+          <p className="text-gray-400 mb-4">Still have questions? Connect With Our Support Center</p>
           <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-3 rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
               <span className="unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
-                Contact Us
+                Support Center
               </span>
             </button>
         </div>

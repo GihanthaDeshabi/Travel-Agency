@@ -39,7 +39,7 @@ export default function Nav() {
 
             <li className=" text-sm">
                 <FontAwesomeIcon icon={faEnvelope} className="pr-1 text-[#8192a0] "/>
-                <span>Booking@travelagency.com</span>
+                <span>Booking@travefly.com</span>
             </li>
          </ul>
 
@@ -87,7 +87,7 @@ export default function Nav() {
                     <Link href="/Tour" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> Tours </Link>
                 </li>
                 <div className="logo text-3xl uppercase font-semibold">
-                    <Link href="/" className=" unbounded-font"> Travel <span className=" unbounded-font">Agency</span></Link>
+                    <Link href="/" className=" unbounded-font"> Trave <span className=" unbounded-font">Fly</span></Link>
                 </div>
                 <li>
                     <Link href="/Faq" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> FaQ </Link>
