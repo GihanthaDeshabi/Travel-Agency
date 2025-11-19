@@ -18,9 +18,9 @@ import Author03 from "../../../public/images/author-03.webp";
 // import Author04 from "../../../public/images/author-04.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import BlogPage01 from "../../assest/blog-page-01.webp";
-// import BlogPage02 from "../../assest/blog-page-02.webp";
-// import BlogPage03 from "../..assest/blog-page-03.webp";
+import BlogPage01 from "../../assest/Blog-Page-01.webp";
+import BlogPage02 from "../../assest/Blog-Page-02.webp";
+import BlogPage03 from "../../assest/Blog-Page-03.webp";
 import user from "../../assest/user.png";
 
 export default function Index() {
@@ -28,8 +28,7 @@ export default function Index() {
 
   return (
     <>
-
-    {/* hero */}
+      {/* hero */}
       <div className="hero h-screen min-h-screen z-10 flex items-center justify-center">
         <div className="hero-content relative text-center">
           <h1 className="xl:text-8xl lg:text-7xl md:text-6xl text-4xl unbounded-font font-bold">
@@ -291,234 +290,393 @@ export default function Index() {
         </div>
       </div>
       {/* Testimonial */}
-{/*------------------------------------------------------------------------------------------------------ */}
-<div className="testimonials bg-gradient-to-br from-[#0e0700] to-[#1a1410] px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]">
-  <div className="pb-10 testimonials-content flex flex-col lg:flex-row justify-between gap-8 lg:gap-10 items-start w-full">
-    <h2 className="xl:w-[50%] w-full text-white text-3xl md:text-4xl xl:text-5xl unbounded-font leading-tight">
-      Discover A Mesmerizing Nature Landscape & Stunning Culture
-    </h2>
-    <div className="xl:w-[50%] w-full">
-      <p className="text-gray-400 pb-5 text-sm md:text-base leading-relaxed">
-        Discover a mesmerizing natural landscape and stunning culture that will captivate your senses. From breathtaking scenery to rich traditions, every moment offers a unique and unforgettable experience.
-      </p>
-      <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-3 rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
-        <span className="unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
-          Learn More
-        </span>
-      </button>
-    </div>
+      {/*------------------------------------------------------------------------------------------------------ */}
+      <div className="testimonials bg-gradient-to-br from-[#0e0700] to-[#1a1410] px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]">
+        <div className="pb-10 testimonials-content flex flex-col lg:flex-row justify-between gap-8 lg:gap-10 items-start w-full">
+          <h2 className="xl:w-[50%] w-full text-white text-3xl md:text-4xl xl:text-5xl unbounded-font leading-tight">
+            Discover A Mesmerizing Nature Landscape & Stunning Culture
+          </h2>
+          <div className="xl:w-[50%] w-full">
+            <p className="text-gray-400 pb-5 text-sm md:text-base leading-relaxed">
+              Discover a mesmerizing natural landscape and stunning culture that
+              will captivate your senses. From breathtaking scenery to rich
+              traditions, every moment offers a unique and unforgettable
+              experience.
+            </p>
+            <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-3 rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span className="unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
+                Learn More
+              </span>
+            </button>
+          </div>
+        </div>
+
+        {/* Swiper Testimonials */}
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            1199: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            0: { slidesPerView: 1 },
+          }}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          className="testimonials-swiper"
+        >
+          {/* Testimonial 1 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "An absolutely amazing experience! The tour was
+                  well-organized, and the destinations were breathtaking. I
+                  highly recommend this to anyone looking for adventure and
+                  culture."
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="Sarah Johnson"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    Sarah Johnson
+                  </h4>
+                  <p className="text-gray-500 text-xs">Travel Blogger</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Testimonial 2 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "Every detail was perfect from start to finish. The landscapes
+                  were stunning and the cultural experiences were truly
+                  authentic. Best vacation ever!"
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="Michael Chen"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    Michael Chen
+                  </h4>
+                  <p className="text-gray-500 text-xs">Adventure Enthusiast</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Testimonial 3 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "Exceptional service and unforgettable memories. The guides
+                  were knowledgeable and friendly. I can't wait to book my next
+                  trip with them!"
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="Emily Rodriguez"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    Emily Rodriguez
+                  </h4>
+                  <p className="text-gray-500 text-xs">Photographer</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Testimonial 4 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "A life-changing journey! The natural beauty combined with
+                  rich cultural heritage made this trip truly special. Highly
+                  professional team!"
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="David Kumar"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    David Kumar
+                  </h4>
+                  <p className="text-gray-500 text-xs">Travel Writer</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Testimonial 5 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "Outstanding experience from booking to the final day. Every
+                  location was carefully selected and the entire journey was
+                  seamless. Five stars!"
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="Jessica Williams"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    Jessica Williams
+                  </h4>
+                  <p className="text-gray-500 text-xs">Marketing Director</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Testimonial 6 */}
+          <SwiperSlide>
+            <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
+              <div>
+                {/* Star Rating */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-5 h-5 text-yellow-400 fill-current"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
+                  "Incredible value for money! The tour exceeded all my
+                  expectations. The blend of adventure and relaxation was
+                  perfect. Will definitely return!"
+                </p>
+              </div>
+
+              {/* User Info */}
+              <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
+                  <Image
+                    src={user}
+                    fill
+                    className="object-cover"
+                    alt="James Anderson"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-white unbounded-font font-semibold text-sm">
+                    James Anderson
+                  </h4>
+                  <p className="text-gray-500 text-xs">Business Owner</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      {/* blog */}
+      {/* ----------------------------------------------------------------------------------------------------- */}
+      <div className="blog px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]">
+        <div className="w-full pb-5 ">
+            <h1 className="unbounded-font text-4xl font-semibold pb-3"> Our Latest Blogs</h1>
+            <p className="text-[#193555]">Explore our latest blogs for fresh travel insights, helpful tips, and inspiring stories from around the world. Stay updated with new destinations, guides, and experiences curated just for you. </p>
+
+        </div>
+
+        <div className="blog-wrapper grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="blog-card group cursor-pointer">
+  <div className="overflow-hidden rounded-[20px] mb-4">
+    <Image 
+      src={BlogPage01} 
+      alt="blog01" 
+      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+    />
   </div>
-
-  {/* Swiper Testimonials */}
-  <Swiper
-    spaceBetween={20}
-    slidesPerView={1}
-    breakpoints={{
-      1199: { slidesPerView: 3 },
-      768: { slidesPerView: 2 },
-      0: { slidesPerView: 1 },
-    }}
-    loop={true}
-    autoplay={{
-      delay: 3000,
-      disableOnInteraction: false,
-    }}
-    pagination={{ clickable: true }}
-    className="testimonials-swiper"
-  >
-    {/* Testimonial 1 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "An absolutely amazing experience! The tour was well-organized, and the destinations were breathtaking. I highly recommend this to anyone looking for adventure and culture."
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="Sarah Johnson"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">Sarah Johnson</h4>
-            <p className="text-gray-500 text-xs">Travel Blogger</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-
-    {/* Testimonial 2 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "Every detail was perfect from start to finish. The landscapes were stunning and the cultural experiences were truly authentic. Best vacation ever!"
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="Michael Chen"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">Michael Chen</h4>
-            <p className="text-gray-500 text-xs">Adventure Enthusiast</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-
-    {/* Testimonial 3 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "Exceptional service and unforgettable memories. The guides were knowledgeable and friendly. I can't wait to book my next trip with them!"
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="Emily Rodriguez"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">Emily Rodriguez</h4>
-            <p className="text-gray-500 text-xs">Photographer</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-
-    {/* Testimonial 4 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "A life-changing journey! The natural beauty combined with rich cultural heritage made this trip truly special. Highly professional team!"
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="David Kumar"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">David Kumar</h4>
-            <p className="text-gray-500 text-xs">Travel Writer</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-
-    {/* Testimonial 5 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "Outstanding experience from booking to the final day. Every location was carefully selected and the entire journey was seamless. Five stars!"
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="Jessica Williams"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">Jessica Williams</h4>
-            <p className="text-gray-500 text-xs">Marketing Director</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-
-    {/* Testimonial 6 */}
-    <SwiperSlide>
-      <div className="tst-item bg-gradient-to-br from-[#191919] to-[#0f0f0f] p-6 rounded-2xl h-[320px] flex flex-col justify-between hover:shadow-2xl transition-all duration-300 border border-white/5 hover:border-white/10">
-        <div>
-          {/* Star Rating */}
-          <div className="flex items-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-              </svg>
-            ))}
-          </div>
-          
-          {/* Testimonial Text */}
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed italic">
-            "Incredible value for money! The tour exceeded all my expectations. The blend of adventure and relaxation was perfect. Will definitely return!"
-          </p>
-        </div>
-
-        {/* User Info */}
-        <div className="tst-user flex items-center gap-3 mt-6 pt-4 border-t border-white/10">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-yellow-400/30">
-            <Image src={user} fill className="object-cover" alt="James Anderson"/>
-          </div>
-          <div>
-            <h4 className="text-white unbounded-font font-semibold text-sm">James Anderson</h4>
-            <p className="text-gray-500 text-xs">Business Owner</p>
-          </div>
-        </div>
-      </div>
-    </SwiperSlide>
-  </Swiper>
+  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+    Tropical Bliss: Rejuvenate in Asia's Idyllic Beaches
+  </h2>
+  <p className="text-[#7a7a7a] text-sm leading-relaxed">
+    Escape to paradise and discover Asia's most breathtaking beaches. From the crystal-clear waters of Thailand's Phi Phi Islands to the pristine shores of Bali, experience ultimate relaxation surrounded by stunning natural beauty. Let the gentle waves and golden sunsets restore your mind, body, and soul in these tropical havens.
+  </p>
+  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
+    Read More 
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
 </div>
+
+<div className="blog-card group cursor-pointer">
+  <div className="overflow-hidden rounded-[20px] mb-4">
+    <Image 
+      src={BlogPage02} 
+      alt="blog02" 
+      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+    />
+  </div>
+  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+    Asia's Thrilling Adventures: Hiking, Trekking And More
+  </h2>
+  <p className="text-[#7a7a7a] text-sm leading-relaxed">
+    Embark on exhilarating adventures across Asia's diverse landscapes. Trek through the majestic Himalayas, hike ancient trails in Nepal, or explore the lush jungles of Vietnam. Whether you're scaling mountain peaks or discovering hidden waterfalls, Asia offers endless opportunities for adventure seekers and nature enthusiasts alike.
+  </p>
+  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
+    Read More 
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+
+<div className="blog-card group cursor-pointer">
+  <div className="overflow-hidden rounded-[20px] mb-4">
+    <Image 
+      src={BlogPage03} 
+      alt="blog03" 
+      className="rounded-[20px] group-hover:scale-110 transition-transform duration-500"
+    />
+  </div>
+  <h2 className="font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-3 group-hover:text-[#193555] transition-colors">
+    Unforgettable Experiences: Asia's Must-Visit Destinations
+  </h2>
+  <p className="text-[#7a7a7a] text-sm leading-relaxed">
+    Journey through Asia's most iconic destinations and create memories that last a lifetime. From the ancient temples of Angkor Wat to the bustling streets of Tokyo, immerse yourself in rich cultures and traditions. Experience the perfect blend of history, cuisine, and modern marvels that make Asia an unforgettable travel destination.
+  </p>
+  <a href="#" className="inline-flex items-center gap-2 text-[#193555] font-semibold text-sm mt-4 group-hover:gap-3 transition-all">
+    Read More 
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</div>
+        </div>
+      </div>
     </>
   );
 }
