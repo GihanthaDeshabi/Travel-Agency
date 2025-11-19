@@ -7,7 +7,11 @@ import toursData from "../../context/ToursData.json";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faAngleUp,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 // import {ToursDetails } from "../ToursDetails/[id]/page.jsx";
 import About01 from "../../../public/images/about-01.webp";
 import About02 from "../../../public/images/about-02.webp";
@@ -22,43 +26,49 @@ import BlogPage01 from "../../assest/Blog-Page-01.webp";
 import BlogPage02 from "../../assest/Blog-Page-02.webp";
 import BlogPage03 from "../../assest/Blog-Page-03.webp";
 import user from "../../assest/user.png";
-import FAQItem from "./FAQ";
+import FAQ from "./FAQ";
 
 export default function Index() {
   const [selectedTour, setSelectedTour] = useState(null);
 
-  const [openIndex, setOpenIndex] = useState(null);
+  //   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  //   const toggle = (index) => {
+  //     setOpenIndex(openIndex === index ? null : index);
+  //   };
 
-  const faqData = [
-  {
-    question: "1. What should I prepare for a trip to Asia?",
-    answer: "When preparing for an Asia trip, ensure your passport is valid for at least 6 months, obtain necessary visas, get recommended vaccinations, purchase comprehensive travel insurance, and pack appropriate clothing for the climate. Don't forget essential items like adaptors for electrical outlets, copies of important documents, and local currency or international credit cards."
-  },
-  {
-    question: "2. What is the best time to visit Asia?",
-    answer: "The best time varies by region. Generally, November to February offers pleasant weather across most of Southeast Asia. For East Asia (Japan, Korea, China), spring (March-May) and autumn (September-November) are ideal. Avoid monsoon seasons which typically run from June to September in most tropical regions. Always research specific destinations as weather patterns can vary significantly."
-  },
-  {
-    question: "3. Do I need vaccinations before traveling to Asia?",
-    answer: "Yes, certain vaccinations are recommended depending on your destination. Common ones include Hepatitis A and B, Typhoid, Japanese Encephalitis, and routine vaccines like MMR and Tetanus. Consult your doctor or a travel clinic at least 6-8 weeks before departure, as some vaccines require multiple doses over time. Some countries may also require proof of Yellow Fever vaccination."
-  },
-  {
-    question: "4. How much money should I budget for a trip to Asia?",
-    answer: "Budget varies greatly by country and travel style. Southeast Asian countries (Thailand, Vietnam, Cambodia) can cost $30-50 per day for budget travelers, $80-150 for mid-range, and $200+ for luxury. Countries like Japan, Singapore, and South Korea are more expensive, ranging from $80-300+ per day. Include flights, accommodation, food, activities, visas, insurance, and shopping in your budget planning."
-  },
-  {
-    question: "5. Is it safe to travel alone in Asia?",
-    answer: "Asia is generally safe for solo travelers, especially in popular tourist destinations. Countries like Japan, Singapore, and South Korea have very low crime rates. Always practice common sense: avoid walking alone late at night, keep valuables secure, stay in reputable accommodations, share your itinerary with someone, and trust your instincts. Women should dress modestly in conservative areas and research local customs beforehand."
-  },
-  {
-    question: "6. What are the must-visit destinations in Asia?",
-    answer: "Top destinations include Tokyo and Kyoto in Japan for culture and technology, Bali for beaches and spirituality, Bangkok and Chiang Mai in Thailand for food and temples, Ha Long Bay in Vietnam for natural beauty, Angkor Wat in Cambodia for ancient ruins, Singapore for modern architecture, the Himalayas in Nepal for trekking, and the Maldives for luxury beach resorts. Each offers unique experiences from bustling cities to serene natural landscapes."
-  }
-];
+  //   const faqData = [
+  //     {
+  //       question: "1. What should I prepare for a trip to Asia?",
+  //       answer:
+  //         "When preparing for an Asia trip, ensure your passport is valid for at least 6 months, obtain necessary visas, get recommended vaccinations, purchase comprehensive travel insurance, and pack appropriate clothing for the climate. Don't forget essential items like adaptors for electrical outlets, copies of important documents, and local currency or international credit cards.",
+  //     },
+  //     {
+  //       question: "2. What is the best time to visit Asia?",
+  //       answer:
+  //         "The best time varies by region. Generally, November to February offers pleasant weather across most of Southeast Asia. For East Asia (Japan, Korea, China), spring (March-May) and autumn (September-November) are ideal. Avoid monsoon seasons which typically run from June to September in most tropical regions. Always research specific destinations as weather patterns can vary significantly.",
+  //     },
+  //     {
+  //       question: "3. Do I need vaccinations before traveling to Asia?",
+  //       answer:
+  //         "Yes, certain vaccinations are recommended depending on your destination. Common ones include Hepatitis A and B, Typhoid, Japanese Encephalitis, and routine vaccines like MMR and Tetanus. Consult your doctor or a travel clinic at least 6-8 weeks before departure, as some vaccines require multiple doses over time. Some countries may also require proof of Yellow Fever vaccination.",
+  //     },
+  //     {
+  //       question: "4. How much money should I budget for a trip to Asia?",
+  //       answer:
+  //         "Budget varies greatly by country and travel style. Southeast Asian countries (Thailand, Vietnam, Cambodia) can cost $30-50 per day for budget travelers, $80-150 for mid-range, and $200+ for luxury. Countries like Japan, Singapore, and South Korea are more expensive, ranging from $80-300+ per day. Include flights, accommodation, food, activities, visas, insurance, and shopping in your budget planning.",
+  //     },
+  //     {
+  //       question: "5. Is it safe to travel alone in Asia?",
+  //       answer:
+  //         "Asia is generally safe for solo travelers, especially in popular tourist destinations. Countries like Japan, Singapore, and South Korea have very low crime rates. Always practice common sense: avoid walking alone late at night, keep valuables secure, stay in reputable accommodations, share your itinerary with someone, and trust your instincts. Women should dress modestly in conservative areas and research local customs beforehand.",
+  //     },
+  //     {
+  //       question: "6. What are the must-visit destinations in Asia?",
+  //       answer:
+  //         "Top destinations include Tokyo and Kyoto in Japan for culture and technology, Bali for beaches and spirituality, Bangkok and Chiang Mai in Thailand for food and temples, Ha Long Bay in Vietnam for natural beauty, Angkor Wat in Cambodia for ancient ruins, Singapore for modern architecture, the Himalayas in Nepal for trekking, and the Maldives for luxury beach resorts. Each offers unique experiences from bustling cities to serene natural landscapes.",
+  //     },
+  //   ];
 
   return (
     <>
@@ -298,25 +308,25 @@ export default function Index() {
               </div>
 
               {/* ✅ 2. Asian Trip Card - Changed to Black */}
-              <div className="bg-gradient-to-br from-black to-gray-900 text-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col justify-between h-[300px] md:h-[350px] hover:shadow-2xl transition-shadow duration-300">
-                <div>
+              <div className="bg-gradient-to-br from-black to-gray-900 text-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col justify-between min-h-[300px] md:min-h-[350px] lg:h-[350px] hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex-1">
                   <div className="inline-block mb-3">
                     <span className="bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold">
                       Special Offer
                     </span>
                   </div>
-                  <h2 className="text-white text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                  <h2 className="text-white text-xl md:text-xl lg:text-xl font-bold mb-3 md:mb-4 leading-tight">
                     Join Our Asian Travel Trip
                   </h2>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-xs md:text-sm lg:text-xs leading-relaxed">
                     Discover the rich culture, beautiful landscapes, and
                     unforgettable adventures across Asia. From vibrant cities to
                     peaceful natural wonders.
                   </p>
                 </div>
 
-                <button className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 mt-4 w-full md:w-auto">
-                  Explore Now →
+                <button className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 mt-4 w-full lg:w-full md:w-full self-start">
+                  Explore →
                 </button>
               </div>
             </div>
@@ -773,7 +783,7 @@ export default function Index() {
       </div>
       {/* Experience */}
       {/* ---------------------------------------------------------------------------------------------------------- */}
-      <div className="experience px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[50px] bg-gradient-to-br from-[#0e0700] via-[#1a1410] to-[#0e0700] relative overflow-hidden">
+      <div className="experience px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[50px] bg-gradient-to-br from-[#0e0700] via-[#1a1410] to-[#000000] relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-[#193555] rounded-full blur-3xl animate-float"></div>
@@ -895,11 +905,10 @@ export default function Index() {
             </div>
 
             {/* CTA Button */}
-            <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-4 rounded-full w-full md:w-auto transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-105 relative overflow-hidden">
-              <span className="relative z-10 unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
+            <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-3 rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span className="unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
                 Learn More
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#193555] to-[#0f273d] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </button>
 
             {/* Trust Badge */}
@@ -937,19 +946,31 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-8 mt-10 mx-auto w-[100%] lg:w-[80%]">
-  {faqData.map((item, index) => (
-    <FAQItem
-      key={index}
-      item={item}
-      isOpen={openIndex === index}
-      toggle={() => toggle(index)}
-    />
-  ))}
-</div>
-
       </div>
+      {/* FAQ */}
+      {/* --------------------------------------------------------------------------------------------------------------------*/}
+      <FAQ />
 
+      {/* contact banner  */}
+      {/* ----------------------------------------------------------------------------------------------------------------------- */}
+      <div className="contact-banner flex justify-center items-center">
+        <div className="contact-banner-content relative text-center">
+          <h1 className="xl:text-5xl lg:text-7xl text-4xl text-white unbounded-font font-bold">
+            Get Closer with US & <br /> Get Special Promo
+          </h1>
+          <p className="pt-6 text-[#ffffffb3] pb-10 text-center max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Join our community and unlock exclusive travel deals, early bird
+            discounts, and personalized tour packages. Subscribe to our
+            newsletter and be the first to know about special promotions,
+            seasonal offers, and amazing travel destinations across Asia.
+          </p>
+          <button className="btn bg-white group hover:bg-[#193555] font-bold px-8 py-3 rounded-full cursor-pointer transition-all duration-300 shadow-lg hover:shadow-xl">
+            <span className="unbounded-font text-sm xl:text-md uppercase text-[#193555] group-hover:text-white transition-colors duration-300">
+              Contact US {/* ✅ Fixed typo: "LContact US" → "Contact US" */}
+            </span>
+          </button>
+        </div>
+      </div>
     </>
   );
 }
