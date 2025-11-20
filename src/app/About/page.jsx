@@ -20,6 +20,9 @@ import {
   faAngleRight,
   faLocationDot,
   faPlay,
+  faShield,
+  faUserTie,
+  faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import FAQ from "../Index/FAQ";
 
@@ -343,6 +346,120 @@ export default function page() {
               Watch our exclusive travel documentary and discover the beauty of
               Asia
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* adventure */}
+      {/* --------------------------------------------------------------------------------------------------------- */}
+      <div className="adventure flex flex-col lg:flex-row px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px] gap-10 lg:gap-16">
+        {/* Left Side - Content */}
+        <div className="w-full lg:w-[45%] adventure-content">
+          <h2 className="text-4xl md:text-5xl mb-4 font-semibold unbounded-font">
+            Adventure Gives New Experiences
+          </h2>
+          <p className="text-[#7a7a7a] mb-8 text-sm md:text-base leading-relaxed">
+            Step out of your comfort zone and embrace the unknown. Every
+            adventure opens doors to new cultures, perspectives, and
+            unforgettable moments that transform the way you see the world and
+            yourself.
+          </p>
+
+          {/* Adventure Features */}
+          <div className="space-y-6">
+            {/* Safe Traveling */}
+            <div className="adventure-section flex items-start gap-5">
+              <div className="adventure-icons flex-shrink-0">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#193555] rounded-full flex items-center justify-center shadow-lg">
+                  <FontAwesomeIcon
+                    icon={faShieldHalved}
+                    className="text-white text-xl md:text-2xl"
+                  />
+                </div>
+              </div>
+              <div className="adventure-text flex-1">
+                <h3 className="mb-2 font-semibold text-lg md:text-xl">
+                  Safe Traveling
+                </h3>
+                <p className="text-[#7a7a7a] text-sm md:text-base leading-relaxed">
+                  Your safety is our priority. We ensure secure transportation,
+                  verified accommodations, and 24/7 support throughout your
+                  journey.
+                </p>
+              </div>
+            </div>
+
+            {/* Professional Guides */}
+            <div className="adventure-section flex items-start gap-5">
+              <div className="adventure-icons flex-shrink-0">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#193555] rounded-full flex items-center justify-center shadow-lg">
+                  <FontAwesomeIcon
+                    icon={faUserTie}
+                    className="text-white text-xl md:text-2xl"
+                  />
+                </div>
+              </div>
+              <div className="adventure-text flex-1">
+                <h3 className="mb-2 font-semibold text-lg md:text-xl">
+                  Expert Guides
+                </h3>
+                <p className="text-[#7a7a7a] text-sm md:text-base leading-relaxed">
+                  Travel with experienced local guides who bring destinations to
+                  life with insider knowledge and authentic stories.
+                </p>
+              </div>
+            </div>
+
+            {/* Best Destinations */}
+            <div className="adventure-section flex items-start gap-5">
+              <div className="adventure-icons flex-shrink-0">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-[#193555] rounded-full flex items-center justify-center shadow-lg">
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className="text-white text-xl md:text-2xl"
+                  />
+                </div>
+              </div>
+              <div className="adventure-text flex-1">
+                <h3 className="mb-2 font-semibold text-lg md:text-xl">
+                  Best Destinations
+                </h3>
+                <p className="text-[#7a7a7a] text-sm md:text-base leading-relaxed">
+                  Explore handpicked locations that offer unique experiences,
+                  breathtaking views, and unforgettable memories.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side - Image */}
+        <div className="w-full lg:w-[55%] relative">
+          <div className="relative h-[400px] md:h-[500px] lg:h-full min-h-[600px] rounded-3xl overflow-hidden shadow-2xl group">
+            <Image
+              src={Adventure01}
+              alt="Adventure Experience"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              priority
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Optional: Floating Badge */}
+            {/* <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+        <p className="text-sm font-semibold text-[#193555]">
+          ⭐ Top Rated Experience
+        </p>
+      </div> */}
+
+            {/* Optional: Bottom Info Card */}
+            <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-xl transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <h4 className="font-bold text-lg mb-1">Unforgettable Moments</h4>
+              <p className="text-sm text-gray-600">
+                Join 1,200+ travelers who discovered their perfect adventure
+              </p>
+            </div>
           </div>
         </div>
       </div>

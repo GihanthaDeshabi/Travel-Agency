@@ -84,7 +84,7 @@ export default function Nav() {
                     <Link href="/About" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> About </Link>
                 </li>
                 <li>
-                    <Link href="/Tour" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> Tours </Link>
+                    <Link href="/Tours" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> Tours </Link>
                 </li>
                 <div className="logo text-3xl uppercase font-semibold">
                     <Link href="/" className=" unbounded-font"> Trave <span className=" unbounded-font">Fly</span></Link>
@@ -115,7 +115,7 @@ export default function Nav() {
                     <a href="/About" className="font-[500px] hover:text-black">About</a>
                 </li>
                 <li>
-                    <a href="/Tour" className="font-[500px] hover:text-black">Tours</a>
+                    <a href="/Tours" className="font-[500px] hover:text-black">Tours</a>
                 </li>
                 <li>
                     <a href="/Faq" className="font-[500px] hover:text-black">FaQ</a>
