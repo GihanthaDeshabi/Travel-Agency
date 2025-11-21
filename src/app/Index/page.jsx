@@ -31,44 +31,7 @@ import FAQ from "./FAQ";
 export default function Index() {
   const [selectedTour, setSelectedTour] = useState(null);
 
-  //   const [openIndex, setOpenIndex] = useState(null);
-
-  //   const toggle = (index) => {
-  //     setOpenIndex(openIndex === index ? null : index);
-  //   };
-
-  //   const faqData = [
-  //     {
-  //       question: "1. What should I prepare for a trip to Asia?",
-  //       answer:
-  //         "When preparing for an Asia trip, ensure your passport is valid for at least 6 months, obtain necessary visas, get recommended vaccinations, purchase comprehensive travel insurance, and pack appropriate clothing for the climate. Don't forget essential items like adaptors for electrical outlets, copies of important documents, and local currency or international credit cards.",
-  //     },
-  //     {
-  //       question: "2. What is the best time to visit Asia?",
-  //       answer:
-  //         "The best time varies by region. Generally, November to February offers pleasant weather across most of Southeast Asia. For East Asia (Japan, Korea, China), spring (March-May) and autumn (September-November) are ideal. Avoid monsoon seasons which typically run from June to September in most tropical regions. Always research specific destinations as weather patterns can vary significantly.",
-  //     },
-  //     {
-  //       question: "3. Do I need vaccinations before traveling to Asia?",
-  //       answer:
-  //         "Yes, certain vaccinations are recommended depending on your destination. Common ones include Hepatitis A and B, Typhoid, Japanese Encephalitis, and routine vaccines like MMR and Tetanus. Consult your doctor or a travel clinic at least 6-8 weeks before departure, as some vaccines require multiple doses over time. Some countries may also require proof of Yellow Fever vaccination.",
-  //     },
-  //     {
-  //       question: "4. How much money should I budget for a trip to Asia?",
-  //       answer:
-  //         "Budget varies greatly by country and travel style. Southeast Asian countries (Thailand, Vietnam, Cambodia) can cost $30-50 per day for budget travelers, $80-150 for mid-range, and $200+ for luxury. Countries like Japan, Singapore, and South Korea are more expensive, ranging from $80-300+ per day. Include flights, accommodation, food, activities, visas, insurance, and shopping in your budget planning.",
-  //     },
-  //     {
-  //       question: "5. Is it safe to travel alone in Asia?",
-  //       answer:
-  //         "Asia is generally safe for solo travelers, especially in popular tourist destinations. Countries like Japan, Singapore, and South Korea have very low crime rates. Always practice common sense: avoid walking alone late at night, keep valuables secure, stay in reputable accommodations, share your itinerary with someone, and trust your instincts. Women should dress modestly in conservative areas and research local customs beforehand.",
-  //     },
-  //     {
-  //       question: "6. What are the must-visit destinations in Asia?",
-  //       answer:
-  //         "Top destinations include Tokyo and Kyoto in Japan for culture and technology, Bali for beaches and spirituality, Bangkok and Chiang Mai in Thailand for food and temples, Ha Long Bay in Vietnam for natural beauty, Angkor Wat in Cambodia for ancient ruins, Singapore for modern architecture, the Himalayas in Nepal for trekking, and the Maldives for luxury beach resorts. Each offers unique experiences from bustling cities to serene natural landscapes.",
-  //     },
-  //   ];
+  
 
   return (
     <>

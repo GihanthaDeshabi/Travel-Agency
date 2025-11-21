@@ -90,7 +90,7 @@ export default function Nav() {
                     <Link href="/" className=" unbounded-font"> Trave <span className=" unbounded-font">Fly</span></Link>
                 </div>
                 <li>
-                    <Link href="/Faq" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> FaQ </Link>
+                    <Link href="/Faq" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> FAQ </Link>
                 </li>
                 <li>
                     <Link href="/Blog" className=" font-[500] text-[#697e8a] hover:text-black transition-colors duration-500"> Blogs </Link>
@@ -118,7 +118,7 @@ export default function Nav() {
                     <a href="/Tours" className="font-[500px] hover:text-black">Tours</a>
                 </li>
                 <li>
-                    <a href="/Faq" className="font-[500px] hover:text-black">FaQ</a>
+                    <a href="/Faq" className="font-[500px] hover:text-black">FAQ</a>
                 </li>
                 <li>
                     <a href="/Blog" className="font-[500px] hover:text-black">Blogs</a>
